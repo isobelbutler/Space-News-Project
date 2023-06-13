@@ -47,20 +47,27 @@ section {
     overflow: auto;
     margin: 0 auto;
     padding: 0 var(--s-padding);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .logo {
     width: 30px;
 }
 
+/* Repeatable CSS */
 .desktop-only {
     display: none;
 }
 
-    /* Filters */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .invert {
     filter: invert(100);
 }
@@ -90,7 +97,6 @@ section {
 
 h1 {
     font-size: 6rem;
-    text-align: center;
 }
 
 a {
@@ -177,21 +183,19 @@ a {
 
 #user-image-container { 
     grid-area: Image;
-    width: 400px;
+    width: 600px;
+    height: 600px;
     border: 2px white solid;
-    height: 400px;
     /* background-image: url(images/image-placeholder.png); */
     background-image: url(images/M27_Cosgrove_960.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #user-headline-container p {
-    background-color: #000;
+    background-color: var(--background-main);
     padding: 8px;
+    width: 80%;
 }
 
 form >  * {
@@ -200,8 +204,9 @@ form >  * {
 
 input, form button {
     padding: var(--xs-padding);
-    margin: var(--s-padding) 0;
+    margin: var(--xs-padding) 0 var(--s-padding);
     display: block;
+    width: 80%;
 }
 
 input, datalist, form button {
@@ -209,7 +214,7 @@ input, datalist, form button {
 }
 
 #image-placeholder {
-    border: #fff 2px solid;
+    border: white 2px solid;
 }
   
 /* Media Queries */
