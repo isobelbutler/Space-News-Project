@@ -16,6 +16,7 @@
 /* -- Sitewide -- */
 * {
     color: var(--white-fonts);
+    font-family: 'Inter', sans-serif;
 }
 
 *,
@@ -34,6 +35,7 @@ section {
     height: 100vh;
     overflow: auto;
     margin: 0 auto;
+    padding: 0 4rem;
 }
 
 .logo {
@@ -49,19 +51,40 @@ section {
     writing-mode: vertical-lr;
 }
 
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+.outline-text {
+    color: var(--background-main);
+    text-shadow: -1px 1px 0 #fff,
+				  1px 1px 0 #fff,
+				 1px -1px 0 #fff,
+				-1px -1px 0 #fff;
+}
+
+/* Fonts */
+
+h1 {
+    font-size: 8rem;
+}
+
 /* Grid */
 
 .grid-container {  
     display: grid;
-    }
+    height: inherit; /* makes grid fill section */
+}
 
 .vertical-grid-side { 
-    grid-area: vertical-text; }
+    grid-area: vertical-text; 
+    justify-self: end;
+}
 
 /* Opening Section */
 
 .coverpage .grid-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 20fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
