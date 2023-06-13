@@ -14,8 +14,8 @@
     --xl-padding: 6rem;
 
     /* Outline Text */
-    --outline-text-postive: 2px;
-    --outline-text-negative: -2px;
+    --outline-text-postive: 3px;
+    --outline-text-negative: -3px;
 }
 
 /* -- Sitewide -- */
@@ -38,6 +38,7 @@ body {
 
 nav {
     padding: var(--xs-padding) 0;
+    position: absolute;
 }
 
 section {
@@ -84,17 +85,18 @@ section {
 /* Fonts */
 
 h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     text-align: center;
 }
 
 /* Grid */
 
-.grid-container {  
+.grid-container {
     padding: var(--med-padding) 0;
     display: grid;
     align-items: center;
     justify-items: center;
+    height: inherit;
 }
 
 .vertical-grid-side { 
@@ -147,6 +149,7 @@ h1 {
 
     h1 {
         font-size: 8rem;
+        text-align: left;
     }
 
     .coverpage .grid-container {
@@ -157,6 +160,10 @@ h1 {
           ". vertical-text";
         justify-items: start;
       }
+
+      .logo {
+        width: 50px;
+    }
 }
 
 
