@@ -3,6 +3,7 @@
 
     /* Colours */
     --white-fonts: #fff;
+    --black-fonts: #000;
     --background-main: #000;
 
     /* Padding */
@@ -11,6 +12,10 @@
     --med-padding: 3rem;
     --l-padding: 4rem;
     --xl-padding: 5rem;
+
+    /* Outline Text */
+    --outline-text-postive: 2px;
+    --outline-text-negative: -2px;
 }
 
 /* -- Sitewide -- */
@@ -31,15 +36,23 @@ body {
     background-color: var(--background-main);
 }
 
+nav {
+    padding: var(--xs-padding) 0;
+}
+
 section {
     height: 100vh;
     overflow: auto;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 var(--l-padding);
 }
 
 .logo {
     width: 30px;
+}
+
+.desktop-only {
+    display: none;
 }
 
     /* Filters */
@@ -55,12 +68,17 @@ section {
     text-transform: uppercase;
 }
 
+.italicise {
+    font-style: italic;
+}
+
 .outline-text {
     color: var(--background-main);
-    text-shadow: -1px 1px 0 #fff,
-				  1px 1px 0 #fff,
-				 1px -1px 0 #fff,
-				-1px -1px 0 #fff;
+    text-shadow: 
+        var(--outline-text-negative) var(--outline-text-postive) 0 var(--white-fonts),
+        var(--outline-text-postive) var(--outline-text-postive) 0 var(--white-fonts),
+        var(--outline-text-postive) var(--outline-text-negative) 0 var(--white-fonts),
+        var(--outline-text-negative) var(--outline-text-negative) 0 var(--white-fonts);
 }
 
 /* Fonts */
@@ -72,6 +90,7 @@ h1 {
 /* Grid */
 
 .grid-container {  
+    padding: var(--med-padding) 0;
     display: grid;
     height: inherit; /* makes grid fill section */
 }
@@ -81,11 +100,24 @@ h1 {
     justify-self: end;
 }
 
+/* Link Button */
+
+.link-button {
+    padding: var(--xs-padding);
+    background-color: var(--white-fonts);
+    text-decoration: none;
+    width: max-content;
+    height: max-content;
+}
+
+.link-text {
+    color: var(--black-fonts);
+}
 /* Opening Section */
 
 .coverpage .grid-container {
     grid-template-columns: 20fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -100,7 +132,10 @@ h1 {
     background-repeat: no-repeat;
 }
   
-
-
+@media (min-width: 450px) {
+    .desktop-only {
+        display: block;
+    }
+}
 
   
