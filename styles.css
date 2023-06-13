@@ -1,11 +1,11 @@
-/* Variables */
+/* -- Variables -- */
 :root {
 
-/* Colours */
+    /* Colours */
     --white-fonts: #fff;
     --background-main: #000;
 
-/* Padding */
+    /* Padding */
     --xs-padding: 1rem;
     --s-padding: 2rem;
     --med-padding: 3rem;
@@ -13,8 +13,7 @@
     --xl-padding: 5rem;
 }
 
-
-/* Sitewide */
+/* -- Sitewide -- */
 * {
     color: var(--white-fonts);
 }
@@ -41,7 +40,44 @@ section {
     width: 30px;
 }
 
-/* Image Filters */
+    /* Filters */
 .invert {
     filter: invert(100);
 }
+
+.side-text {
+    writing-mode: vertical-lr;
+}
+
+/* Grid */
+
+.grid-container {  
+    display: grid;
+    }
+
+.vertical-grid-side { 
+    grid-area: vertical-text; }
+
+/* Opening Section */
+
+.coverpage .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". vertical-text"
+      ". vertical-text"
+      ". vertical-text";
+  }
+
+.coverpage {
+    background-image: url(images/red-planet-bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+  
+
+
+
+  
