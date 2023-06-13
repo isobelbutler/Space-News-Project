@@ -4,7 +4,8 @@
     /* Colours */
     --white-fonts: #fff;
     --black-fonts: #000;
-    --background-main: #000;
+    --background-main: #010015;
+    --button-hover: #FCD989;
 
     /* Padding */
     --xs-padding: 1rem;
@@ -14,8 +15,8 @@
     --xl-padding: 6rem;
 
     /* Outline Text */
-    --outline-text-postive: 3px;
-    --outline-text-negative: -3px;
+    --outline-text-postive: 2px;
+    --outline-text-negative: -2px;
 }
 
 /* -- Sitewide -- */
@@ -42,7 +43,7 @@ nav {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     overflow: auto;
     margin: 0 auto;
     padding: 0 var(--s-padding);
@@ -131,6 +132,17 @@ a {
 .link-arrow {
     font-size: 4rem;
 }
+
+.link-button:hover {
+    background-color: var(--button-hover);    
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.link-arrow:hover {
+    color: var(--button-hover);  
+    transition: 0.5s;
+}
 /* Opening Section */
 
 .coverpage .grid-container {
@@ -140,13 +152,64 @@ a {
   }
 
 .coverpage {
-    background-image: url(images/mars-solar-system-planet-red-planet-outer-space-5120x2880-8760.jpg);
+    background-image: url(images/red-planets-2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .subtitle {
     width: 40%;
+}
+
+/* Meaty Form Section */
+
+.meaty_section .grid-container {
+        display: grid; 
+        grid-template-columns: 1fr 2fr; 
+        grid-template-rows: 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          ". Image ."
+          ". Image ."
+          ". Image ."
+          ". Image ."; 
+}
+
+#user-image-container { 
+    grid-area: Image;
+    width: 400px;
+    border: 2px white solid;
+    height: 400px;
+    /* background-image: url(images/image-placeholder.png); */
+    background-image: url(images/M27_Cosgrove_960.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#user-headline-container p {
+    background-color: #000;
+    padding: 8px;
+}
+
+form >  * {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input, form button {
+    padding: var(--xs-padding);
+    margin: var(--s-padding) 0;
+    display: block;
+}
+
+input, datalist, form button {
+    color: var(--black-fonts);
+}
+
+#image-placeholder {
+    border: #fff 2px solid;
 }
   
 /* Media Queries */
