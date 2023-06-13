@@ -1,0 +1,47 @@
+/* Variables */
+:root {
+
+/* Colours */
+    --white-fonts: #fff;
+    --background-main: #000;
+
+/* Padding */
+    --xs-padding: 1rem;
+    --s-padding: 2rem;
+    --med-padding: 3rem;
+    --l-padding: 4rem;
+    --xl-padding: 5rem;
+}
+
+
+/* Sitewide */
+* {
+    color: var(--white-fonts);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-main);
+}
+
+section {
+    height: 100vh;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 30px;
+}
+
+/* Image Filters */
+.invert {
+    filter: invert(100);
+}
