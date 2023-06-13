@@ -11,7 +11,7 @@
     --s-padding: 2rem;
     --med-padding: 3rem;
     --l-padding: 4rem;
-    --xl-padding: 5rem;
+    --xl-padding: 6rem;
 
     /* Outline Text */
     --outline-text-postive: 2px;
@@ -44,7 +44,7 @@ section {
     height: 100vh;
     overflow: auto;
     margin: 0 auto;
-    padding: 0 var(--l-padding);
+    padding: 0 var(--s-padding);
 }
 
 .logo {
@@ -84,7 +84,8 @@ section {
 /* Fonts */
 
 h1 {
-    font-size: 8rem;
+    font-size: 4rem;
+    text-align: center;
 }
 
 /* Grid */
@@ -92,12 +93,14 @@ h1 {
 .grid-container {  
     padding: var(--med-padding) 0;
     display: grid;
-    height: inherit; /* makes grid fill section */
+    align-items: center;
+    justify-items: center;
 }
 
 .vertical-grid-side { 
     grid-area: vertical-text; 
     justify-self: end;
+    align-self: end;
 }
 
 /* Link Button */
@@ -116,14 +119,9 @@ h1 {
 /* Opening Section */
 
 .coverpage .grid-container {
-    grid-template-columns: 20fr 1fr;
-    grid-template-rows: 3fr 1fr 1fr;
-    gap: 0px 0px;
+    grid-template-columns: 1fr;
+    gap: var(--med-padding) 0;
     grid-auto-flow: row;
-    grid-template-areas:
-      ". vertical-text"
-      ". vertical-text"
-      ". vertical-text";
   }
 
 .coverpage {
@@ -131,11 +129,35 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.subtitle {
+    width: 40%;
+}
   
+/* Media Queries */
+
 @media (min-width: 450px) {
     .desktop-only {
         display: block;
     }
+
+    section {
+        padding: 0 var(--xl-padding);
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+    .coverpage .grid-container {
+        grid-template-columns: 20fr 1fr;
+        grid-template-areas:
+          ". vertical-text"
+          ". vertical-text"
+          ". vertical-text";
+        justify-items: start;
+      }
 }
+
 
   
