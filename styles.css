@@ -37,7 +37,7 @@ body {
 }
 
 nav {
-    padding: var(--xs-padding) 0;
+    padding: var(--xs-padding);
     position: absolute;
 }
 
@@ -46,6 +46,9 @@ section {
     overflow: auto;
     margin: 0 auto;
     padding: 0 var(--s-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo {
@@ -89,6 +92,10 @@ h1 {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Grid */
 
 .grid-container {
@@ -96,7 +103,7 @@ h1 {
     display: grid;
     align-items: center;
     justify-items: center;
-    height: inherit;
+    height: 80%;
 }
 
 .vertical-grid-side { 
@@ -105,18 +112,24 @@ h1 {
     align-self: end;
 }
 
-/* Link Button */
+/* Link Symbols */
 
 .link-button {
     padding: var(--xs-padding);
     background-color: var(--white-fonts);
-    text-decoration: none;
     width: max-content;
     height: max-content;
 }
 
 .link-text {
     color: var(--black-fonts);
+}
+
+.link-arrow-container {
+    margin: 0 auto;
+}
+.link-arrow {
+    font-size: 4rem;
 }
 /* Opening Section */
 
