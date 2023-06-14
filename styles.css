@@ -239,6 +239,19 @@ input, datalist, form button {
 
     h1 {
         font-size: 8rem;
+    }
+
+      .logo {
+        width: 50px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .desktop-only {
+        display: block;
+    }
+
+    h1 {
         text-align: left;
     }
 
@@ -250,16 +263,6 @@ input, datalist, form button {
           ". opener-side-text";
         justify-items: start;
       }
-
-      .logo {
-        width: 50px;
-    }
-}
-
-@media (min-width: 1100px) {
-    .desktop-only {
-        display: block;
-    }
 
     .meaty_section .grid-container {
         display: grid; 
