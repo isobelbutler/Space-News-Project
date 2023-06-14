@@ -113,8 +113,11 @@ a {
     height: 80%;
 }
 
+#opener-side-text {
+    grid-area: opener-side-text;
+}
+
 .vertical-grid-side { 
-    grid-area: vertical-text; 
     justify-self: end;
     align-self: end;
 }
@@ -169,7 +172,7 @@ a {
 
 /* Meaty Form Section */
 
-.meaty_section .grid-container {
+/* .meaty_section .grid-container {
         display: grid; 
         grid-template-columns: 1fr 2fr; 
         grid-template-rows: 1fr; 
@@ -179,10 +182,27 @@ a {
           ". Image ."
           ". Image ."
           ". Image ."; 
-}
+} */
+
+.meaty_section .grid-container {
+    display: grid; 
+    grid-template-columns: 1fr 1.8fr 0.2fr; 
+    grid-template-rows: 0.5fr 1.5fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". date meaty-side-text"
+      "form user-image-container meaty-side-text"
+      "form user-image-container meaty-side-text"
+      "explanation user-image-container meaty-side-text"; 
+  }
+  #date { grid-area: date; }
+  #meaty-side-text { grid-area: meaty-side-text; }
+  #user-image-container { grid-area: user-image-container; }
+  form { grid-area: form; }
+  #explanation { grid-area: explanation; }
 
 #user-image-container { 
-    grid-area: Image;
+    /* grid-area: Image; */
     width: 600px;
     height: 600px;
     border: 2px white solid;
@@ -192,13 +212,13 @@ a {
     background-repeat: no-repeat;
 }
 
-#user-headline-container p {
+.headline-text {
     background-color: var(--background-main);
     padding: 8px;
     width: 80%;
 }
 
-form >  * {
+form >  *, .headline-text {
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -236,9 +256,9 @@ input, datalist, form button {
     .coverpage .grid-container {
         grid-template-columns: 20fr 1fr;
         grid-template-areas:
-          ". vertical-text"
-          ". vertical-text"
-          ". vertical-text";
+          ". opener-side-text"
+          ". opener-side-text"
+          ". opener-side-text";
         justify-items: start;
       }
 
