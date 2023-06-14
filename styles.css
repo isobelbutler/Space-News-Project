@@ -103,6 +103,7 @@ section {
 
 h1 {
     font-size: 6rem;
+    text-align: center;
 }
 
 a {
@@ -160,7 +161,7 @@ a {
 }
 /* Opening Section */
 
-.coverpage .grid-container {
+.coverpage .grid-container, .meaty_section .grid-container {
     grid-template-columns: 1fr;
     gap: var(--med-padding) 0;
     grid-auto-flow: row;
@@ -178,29 +179,15 @@ a {
 
 /* Meaty Form Section */
 
-.meaty_section .grid-container {
-    display: grid; 
-    grid-template-columns: 1fr 1.8fr 0.2fr; 
-    grid-template-rows: 0.5fr 1.5fr 1fr 1fr; 
-    gap: 0px var(--xs-padding); 
-    grid-template-areas: 
-      ". date meaty-side-text"
-      "form user-image-container meaty-side-text"
-      "form user-image-container meaty-side-text"
-      "explanation user-image-container meaty-side-text"; 
-  }
-
-#date { grid-area: date; }
-#meaty-side-text { grid-area: meaty-side-text; }
-#user-image-container { grid-area: user-image-container; }
-form { grid-area: form; }
-#explanation { grid-area: explanation; }
-
 #user-image-container { 
     border: 2px white solid;
     background: url(images/image-placeholder.png) center / cover no-repeat;
     /* background-image: url(images/image-placeholder.png); */
     /* background-image: url(images/M27_Cosgrove_960.jpg); */
+}
+
+.meaty_section .grid-container {
+    width: 80%;
 }
 
 .headline-text {
@@ -210,7 +197,17 @@ form { grid-area: form; }
     display: none; /* This will need to be changed with JS when API headline is generated */
 }
 
-form {width: 100%;}
+form {
+    width: 100%;
+    order: 1;}
+
+#date {
+    order: 2;
+}
+
+#user-image-container {
+    order: 3;
+}
 
 form >  *, .headline-text {
     font-family: 'Courier New', Courier, monospace;
@@ -218,7 +215,7 @@ form >  *, .headline-text {
 
 input, form button {
     padding: var(--xs-padding);
-    margin: var(--xs-padding) 0 var(--s-padding);
+    margin: var(--xs-padding) auto var(--s-padding);
     display: block;
     width: 80%;
 }
@@ -234,9 +231,7 @@ input, datalist, form button {
 /* Media Queries */
 
 @media (min-width: 450px) {
-    .desktop-only {
-        display: block;
-    }
+   
 
     section {
         padding: 0 var(--xl-padding);
@@ -261,5 +256,31 @@ input, datalist, form button {
     }
 }
 
+@media (min-width: 1100px) {
+    .desktop-only {
+        display: block;
+    }
 
-  
+    .meaty_section .grid-container {
+        display: grid; 
+        grid-template-columns: 1fr 1.8fr 0.2fr; 
+        grid-template-rows: 0.5fr 1.5fr 1fr 1fr; 
+        gap: 0px var(--xs-padding); 
+        grid-template-areas: 
+        ". date meaty-side-text"
+        "form user-image-container meaty-side-text"
+        "form user-image-container meaty-side-text"
+        "explanation user-image-container meaty-side-text"; 
+    } 
+
+    .meaty_section .grid-container > * {
+        order: 1;
+    }
+
+    #date { grid-area: date; }
+    #meaty-side-text { grid-area: meaty-side-text; }
+    #user-image-container { grid-area: user-image-container; }
+    form { grid-area: form; }
+    #explanation { grid-area: explanation; }
+
+} 
