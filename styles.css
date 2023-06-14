@@ -2,8 +2,8 @@
 :root {
 
     /* Colours */
-    --white-fonts: #fff;
-    --black-fonts: #000;
+    --white: #fff;
+    --black: #000;
     --background-main: #010015;
     --button-hover: #FCD989;
 
@@ -21,7 +21,7 @@
 
 /* -- Sitewide -- */
 * {
-    color: var(--white-fonts);
+    color: var(--white);
     font-family: 'Inter', sans-serif;
 }
 
@@ -87,10 +87,10 @@ section {
 .outline-text {
     color: var(--background-main);
     text-shadow: 
-        var(--outline-text-negative) var(--outline-text-postive) 0 var(--white-fonts),
-        var(--outline-text-postive) var(--outline-text-postive) 0 var(--white-fonts),
-        var(--outline-text-postive) var(--outline-text-negative) 0 var(--white-fonts),
-        var(--outline-text-negative) var(--outline-text-negative) 0 var(--white-fonts);
+        var(--outline-text-negative) var(--outline-text-postive) 0 var(--white),
+        var(--outline-text-postive) var(--outline-text-postive) 0 var(--white),
+        var(--outline-text-postive) var(--outline-text-negative) 0 var(--white),
+        var(--outline-text-negative) var(--outline-text-negative) 0 var(--white);
 }
 
 .square-image {
@@ -133,13 +133,13 @@ a {
 
 .link-button {
     padding: var(--xs-padding);
-    background-color: var(--white-fonts);
+    background-color: var(--white);
     width: max-content;
     height: max-content;
 }
 
 .link-text {
-    color: var(--black-fonts);
+    color: var(--black);
 }
 
 .link-arrow-container {
@@ -221,7 +221,7 @@ input, form button {
 }
 
 input, datalist, form button {
-    color: var(--black-fonts);
+    color: var(--black);
 }
 
 #image-placeholder {
