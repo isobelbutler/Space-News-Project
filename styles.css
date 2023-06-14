@@ -181,9 +181,6 @@ a {
 
 #user-image-container { 
     border: 2px white solid;
-    background: url(images/image-placeholder.png) center / cover no-repeat;
-    /* background-image: url(images/image-placeholder.png); */
-    /* background-image: url(images/M27_Cosgrove_960.jpg); */
 }
 
 .meaty_section .grid-container {
