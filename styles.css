@@ -93,6 +93,12 @@ section {
         var(--outline-text-negative) var(--outline-text-negative) 0 var(--white-fonts);
 }
 
+.square-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 100%;
+}
+
 /* Fonts */
 
 h1 {
@@ -172,51 +178,39 @@ a {
 
 /* Meaty Form Section */
 
-/* .meaty_section .grid-container {
-        display: grid; 
-        grid-template-columns: 1fr 2fr; 
-        grid-template-rows: 1fr; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          ". Image ."
-          ". Image ."
-          ". Image ."
-          ". Image ."; 
-} */
-
 .meaty_section .grid-container {
     display: grid; 
     grid-template-columns: 1fr 1.8fr 0.2fr; 
     grid-template-rows: 0.5fr 1.5fr 1fr 1fr; 
-    gap: 0px 0px; 
+    gap: 0px var(--xs-padding); 
     grid-template-areas: 
       ". date meaty-side-text"
       "form user-image-container meaty-side-text"
       "form user-image-container meaty-side-text"
       "explanation user-image-container meaty-side-text"; 
   }
-  #date { grid-area: date; }
-  #meaty-side-text { grid-area: meaty-side-text; }
-  #user-image-container { grid-area: user-image-container; }
-  form { grid-area: form; }
-  #explanation { grid-area: explanation; }
+
+#date { grid-area: date; }
+#meaty-side-text { grid-area: meaty-side-text; }
+#user-image-container { grid-area: user-image-container; }
+form { grid-area: form; }
+#explanation { grid-area: explanation; }
 
 #user-image-container { 
-    /* grid-area: Image; */
-    width: 600px;
-    height: 600px;
     border: 2px white solid;
+    background: url(images/image-placeholder.png) center / cover no-repeat;
     /* background-image: url(images/image-placeholder.png); */
-    background-image: url(images/M27_Cosgrove_960.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background-image: url(images/M27_Cosgrove_960.jpg); */
 }
 
 .headline-text {
     background-color: var(--background-main);
     padding: 8px;
     width: 80%;
+    display: none; /* This will need to be changed with JS when API headline is generated */
 }
+
+form {width: 100%;}
 
 form >  *, .headline-text {
     font-family: 'Courier New', Courier, monospace;
