@@ -209,7 +209,7 @@ form {
     order: 3;
 }
 
-form >  *, .headline-text {
+form >  *, .headline-text, #date, .link-text {
     font-family: 'Courier New', Courier, monospace;
 }
 
