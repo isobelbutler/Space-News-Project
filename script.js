@@ -11,8 +11,10 @@ const apodDisplayElement = document.getElementById("user-image-container");
 const apodDescriptionElement = document.getElementById("explanation");
 const apiHeadlineElement = document.getElementById("apiHeadline");
 
+// Form listener event. Grabs APOD from NASA API then calls grabHeadline function at the end.
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  document.querySelector(".headline-text").style.display = "none";
 
   const dateInput = document.getElementById("formDate").value;
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASAapiKey}&date=${dateInput}`;
@@ -37,6 +39,8 @@ form.addEventListener("submit", (event) => {
 
       apodDisplayElement.style.background = `url(${hdUrl}) center / cover no-repeat`;
       apodDescriptionElement.textContent = description;
+
+      grabHeadline();
     })
     .catch((error) => {
       console.log("Error:", error);
@@ -57,17 +61,20 @@ form.addEventListener("submit", (event) => {
             "Houston, we've had a problem... randomly generated space-related image (no NASA astrology picture of the day for this date)";
 
           console.log("Random Space Image URL:", randomImageUrl);
+
+          grabHeadline();
         })
         .catch((error) => {
           console.log("Error fetching random space image:", error);
+
+          grabHeadline();
         });
     });
 });
 // nb a good date to test an undefined apod hdurl response is 06/06/23 and 31/05/2023
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(form);
+// Function for grabbing the headline frm the Guardian API
+const grabHeadline = () => {
   const articleFilter = document
     .getElementById("articleSection")
     .value.toLowerCase();
@@ -79,8 +86,8 @@ form.addEventListener("submit", (event) => {
   const specificDate = document.getElementById("formDate").value;
 
   const fetchArticlesByDateAndSection = async (date, section) => {
-    const apiKey = "bb4717f4-9ef8-4141-a00c-6cf38e5d80e4";
-    const url = `https://content.guardianapis.com/search?from-date=${specificDate}&to-date=${specificDate}&api-key=${apiKey}${articleFilterURLAppendage}`;
+    const guardianAPIkey = "bb4717f4-9ef8-4141-a00c-6cf38e5d80e4";
+    const url = `https://content.guardianapis.com/search?from-date=${specificDate}&to-date=${specificDate}&api-key=${guardianAPIkey}${articleFilterURLAppendage}`;
 
     console.log(specificDate);
     console.log(articleFilter);
@@ -90,17 +97,17 @@ form.addEventListener("submit", (event) => {
       const response = await fetch(url);
       const data = await response.json();
       const headline = data.response.results[0].webTitle;
-      const headlineUrl = data.response.results[0].webUrl; // New line: Get the URL of the headline story
+      const headlineUrl = data.response.results[0].webUrl;
 
       document.querySelector(".headline-text").style.display = "initial";
-      apiHeadlineElement.innerHTML = `<a href="${headlineUrl}" target="_blank">${headline}</a>`; // Modified line: Attach the URL to the generated headline as a hyperlink
+      apiHeadlineElement.innerHTML = `<a href="${headlineUrl}" target="_blank">${headline}</a>`;
     } catch (error) {
       document.querySelector(".headline-text").style.display = "initial";
-      apiHeadlineElement.innerHTML = `<p>Error: No headline found for this date and news category.<p/>`; // Modified line: Attach the URL to the generated headline as a hyperlink
+      apiHeadlineElement.innerHTML = `<p>Error: No headline found for this date and news category.<p/>`;
       console.log("test");
       console.log("Error:", error);
     }
   };
 
   fetchArticlesByDateAndSection(specificDate, articleFilter);
-});
+};
