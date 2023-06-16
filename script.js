@@ -68,10 +68,13 @@ form.addEventListener("submit", (event) => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  const articleFilter = document.getElementById("articleSection").value.toLowerCase();
+  const articleFilter = document
+    .getElementById("articleSection")
+    .value.toLowerCase();
   const articleFilterURLAppendage =
     articleFilter === "general"
-      ? "" : `&order-by=relevance&section=${articleFilter}`;
+      ? ""
+      : `&order-by=relevance&section=${articleFilter}`;
 
   const specificDate = document.getElementById("formDate").value;
 
@@ -79,27 +82,25 @@ form.addEventListener("submit", (event) => {
     const apiKey = "bb4717f4-9ef8-4141-a00c-6cf38e5d80e4";
     const url = `https://content.guardianapis.com/search?from-date=${specificDate}&to-date=${specificDate}&api-key=${apiKey}${articleFilterURLAppendage}`;
 
-    console.log(url);
     console.log(specificDate);
     console.log(articleFilter);
+    console.log(url);
 
     try {
       const response = await fetch(url);
       const data = await response.json();
       const headline = data.response.results[0].webTitle;
       const headlineUrl = data.response.results[0].webUrl; // New line: Get the URL of the headline story
-      apiHeadlineElement.innerText = headline;
-      apiHeadlineElement.innerHTML = `<a href="${headlineUrl}" target="_blank">${headline}</a>`; // Modified line: Attach the URL to the generated headline as a hyperlink
 
       document.querySelector(".headline-text").style.display = "initial";
-
-      
-
+      apiHeadlineElement.innerHTML = `<a href="${headlineUrl}" target="_blank">${headline}</a>`; // Modified line: Attach the URL to the generated headline as a hyperlink
     } catch (error) {
+      document.querySelector(".headline-text").style.display = "initial";
+      apiHeadlineElement.innerHTML = `<p>Error: No headline found for this date and news category.<p/>`; // Modified line: Attach the URL to the generated headline as a hyperlink
+      console.log("test");
       console.log("Error:", error);
     }
   };
 
   fetchArticlesByDateAndSection(specificDate, articleFilter);
 });
-// Good break case = business 14/06/23
