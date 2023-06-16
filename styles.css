@@ -174,7 +174,9 @@ a {
 }
 
 .subtitle {
-    width: 40%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 /* Meaty Form Section */
