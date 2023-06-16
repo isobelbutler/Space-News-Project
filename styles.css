@@ -224,6 +224,10 @@ input, datalist, form button {
 #image-placeholder {
     border: white 2px solid;
 }
+
+#explanation {
+text-align: justify;
+}
   
 /* Media Queries */
 
