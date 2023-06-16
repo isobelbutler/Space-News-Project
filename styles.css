@@ -1,0 +1,286 @@
+/* -- Variables -- */
+:root {
+
+    /* Colours */
+    --white: #fff;
+    --black: #000;
+    --background-main: #010015;
+    --button-hover: #FCD989;
+
+    /* Padding */
+    --xs-padding: 1rem;
+    --s-padding: 2rem;
+    --med-padding: 3rem;
+    --l-padding: 4rem;
+    --xl-padding: 6rem;
+
+    /* Outline Text */
+    --outline-text-postive: 2px;
+    --outline-text-negative: -2px;
+}
+
+/* -- Sitewide -- */
+* {
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-main);
+}
+
+nav {
+    padding: var(--xs-padding);
+    position: absolute;
+}
+
+section {
+    min-height: 100vh;
+    overflow: auto;
+    margin: 0 auto;
+    padding: 0 var(--s-padding);
+}
+
+.logo {
+    width: 30px;
+}
+
+/* Repeatable CSS */
+.desktop-only {
+    display: none;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.invert {
+    filter: invert(100);
+}
+
+.side-text {
+    writing-mode: vertical-lr;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+.italicise {
+    font-style: italic;
+}
+
+.outline-text {
+    color: var(--background-main);
+    text-shadow: 
+        var(--outline-text-negative) var(--outline-text-postive) 0 var(--white),
+        var(--outline-text-postive) var(--outline-text-postive) 0 var(--white),
+        var(--outline-text-postive) var(--outline-text-negative) 0 var(--white),
+        var(--outline-text-negative) var(--outline-text-negative) 0 var(--white);
+}
+
+.square-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* Fonts */
+
+h1 {
+    font-size: 6rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Grid */
+
+.grid-container {
+    padding: var(--med-padding) 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 80%;
+}
+
+#opener-side-text {
+    grid-area: opener-side-text;
+}
+
+.vertical-grid-side { 
+    justify-self: end;
+    align-self: end;
+}
+
+/* Link Symbols */
+
+.link-button {
+    padding: var(--xs-padding);
+    background-color: var(--white);
+    width: max-content;
+    height: max-content;
+}
+
+.link-text {
+    color: var(--black);
+}
+
+.link-arrow-container {
+    margin: 0 auto;
+}
+.link-arrow {
+    font-size: 4rem;
+}
+
+.link-button:hover {
+    background-color: var(--button-hover);    
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.link-arrow:hover {
+    color: var(--button-hover);  
+    transition: 0.5s;
+}
+/* Opening Section */
+
+.coverpage .grid-container, .meaty_section .grid-container {
+    grid-template-columns: 1fr;
+    gap: var(--med-padding) 0;
+    grid-auto-flow: row;
+  }
+
+.coverpage {
+    background-image: url(images/red-planets-2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.subtitle {
+    width: 40%;
+}
+
+/* Meaty Form Section */
+
+#user-image-container { 
+    border: 2px white solid;
+}
+
+.meaty_section .grid-container {
+    width: 80%;
+}
+
+.headline-text {
+    background-color: var(--background-main);
+    padding: 8px;
+    width: 80%;
+    display: none; /* This will need to be changed with JS when API headline is generated */
+}
+
+form {
+    width: 100%;
+    order: 1;}
+
+#date {
+    order: 2;
+}
+
+#user-image-container {
+    order: 3;
+}
+
+form >  *, .headline-text, #date, .link-text {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input, form button {
+    padding: var(--xs-padding);
+    margin: var(--xs-padding) auto var(--s-padding);
+    display: block;
+    width: 80%;
+}
+
+input, datalist, form button {
+    color: var(--black);
+}
+
+#image-placeholder {
+    border: white 2px solid;
+}
+  
+/* Media Queries */
+
+@media (min-width: 450px) {
+   
+
+    section {
+        padding: 0 var(--xl-padding);
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+      .logo {
+        width: 50px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .desktop-only {
+        display: block;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    .coverpage .grid-container {
+        grid-template-columns: 20fr 1fr;
+        grid-template-areas:
+          ". opener-side-text"
+          ". opener-side-text"
+          ". opener-side-text";
+        justify-items: start;
+      }
+
+    .meaty_section .grid-container {
+        display: grid; 
+        grid-template-columns: 1fr 1.8fr 0.2fr; 
+        grid-template-rows: 0.5fr 1.5fr 1fr 1fr; 
+        gap: 0px var(--xs-padding); 
+        grid-template-areas: 
+        ". date meaty-side-text"
+        "form user-image-container meaty-side-text"
+        "form user-image-container meaty-side-text"
+        "explanation user-image-container meaty-side-text"; 
+    } 
+
+    .meaty_section .grid-container > * {
+        order: 1;
+    }
+
+    #date { grid-area: date; }
+    #meaty-side-text { grid-area: meaty-side-text; }
+    #user-image-container { grid-area: user-image-container; }
+    form { grid-area: form; }
+    #explanation { grid-area: explanation; }
+
+} 
