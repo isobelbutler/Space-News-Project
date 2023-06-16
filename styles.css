@@ -271,13 +271,13 @@ text-align: justify;
     .meaty_section .grid-container {
         display: grid; 
         grid-template-columns: 1fr 1.8fr 0.2fr; 
-        grid-template-rows: 0.5fr 1.5fr 1fr 1fr; 
+        grid-template-rows: auto auto auto; 
         gap: 0px var(--xs-padding); 
         grid-template-areas: 
         ". date meaty-side-text"
         "form user-image-container meaty-side-text"
-        "form user-image-container meaty-side-text"
-        "explanation user-image-container meaty-side-text"; 
+        "explanation user-image-container meaty-side-text"
+        /* "explanation user-image-container meaty-side-text";  */
     } 
 
     .meaty_section .grid-container > * {
@@ -287,7 +287,9 @@ text-align: justify;
     #date { grid-area: date; }
     #meaty-side-text { grid-area: meaty-side-text; }
     #user-image-container { grid-area: user-image-container; }
-    form { grid-area: form; }
+    form { grid-area: form;
+        align-self: start;
+    }
     #explanation { grid-area: explanation; }
 
 } 
