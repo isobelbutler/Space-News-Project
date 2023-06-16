@@ -174,7 +174,9 @@ a {
 }
 
 .subtitle {
-    width: 40%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 /* Meaty Form Section */
@@ -189,7 +191,8 @@ a {
 
 .headline-text {
     background-color: var(--background-main);
-    padding: 8px;
+    padding: 1rem;
+    font-size: 1rem;
     width: 80%;
     display: none; /* This will need to be changed with JS when API headline is generated */
 }
@@ -223,6 +226,10 @@ input, datalist, form button {
 
 #image-placeholder {
     border: white 2px solid;
+}
+
+#explanation {
+text-align: justify;
 }
   
 /* Media Queries */
