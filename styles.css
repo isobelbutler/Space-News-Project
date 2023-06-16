@@ -189,7 +189,8 @@ a {
 
 .headline-text {
     background-color: var(--background-main);
-    padding: 8px;
+    padding: 1rem;
+    font-size: 1rem;
     width: 80%;
     display: none; /* This will need to be changed with JS when API headline is generated */
 }
