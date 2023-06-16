@@ -54,7 +54,7 @@ form.addEventListener("submit", (event) => {
             apodDisplayElement.style.background = `url(${randomImageUrl}) center / cover no-repeat`;
 
             // apodDisplayElement.alt = "Random Space Image";
-            apodDescriptionElement.textContent = "Randomly generated space-related image (no NASA astrology picture of the day for this date)";
+            apodDescriptionElement.textContent = "Houston, we've had a problem... randomly generated space-related image (no NASA astrology picture of the day for this date)";
   
             console.log("Random Space Image URL:", randomImageUrl);
           })

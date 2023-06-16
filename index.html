@@ -1,62 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Space News</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space News</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <main>
+  <body>
+    <main>
+      <nav>
+        <div>
+          <img
+            src="images/telescope_logo.png"
+            alt="Cartoon telescope"
+            class="logo invert"
+          />
+        </div>
+      </nav>
 
-    <nav>
-      <div>
-        <img src="images/telescope_logo.png" alt="Cartoon telescope" class="logo invert">
-      </div>
-    </nav>
-    
-    <section class="coverpage center">
-      <div class="grid-container">
+      <section class="coverpage center">
+        <div class="grid-container">
+          <h1 class="uppercase-text">
+            <span class="outline-text"
+              >The
+              <br />
+            </span>
+            Orbit<span class="outline-text">-uaries</span>
+          </h1>
 
-        <h1 class="uppercase-text">
-          <span class="outline-text">The
-            <br>
-          </span> Orbit<span class="outline-text">-uaries</span>
-        </h1>
-        
-        <a href="#meaty_section" class="link-button link">
-          <p class="link-text">Get Started</p>
-        </a>
+          <a href="#meaty_section" class="link-button link">
+            <p class="link-text">Get Started</p>
+          </a>
 
-        <!-- hidden on mobile -->
-        <p class ="subtitle desktop-only italicise">
-          Introduction lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+          <!-- hidden on mobile -->
+          <p class="subtitle desktop-only italicise">
+            “There is a theory which states that if ever anyone discovers
+            exactly what the Universe is for and why it is here, it will
+            instantly disappear and be replaced by something even more bizarre
+            and inexplicable. There is another theory which states that this has
+            already happened.” ― Douglas Adams 
+            <br><br>
+            A project built for juxtaposing
+            space and earth stories. Enter a date and a news interest to
+            generate the image.
+          </p>
 
-        <a href="#meaty_section" class="link-arrow-container link desktop-only">
-          <p class="link-arrow">&darr;</p>
-        </a>
-        
-        <!-- hidden on mobile -->
-        <p class="side-text vertical-grid-side desktop-only italicise" id="opener-side-text">Travelling the space / news continuum</p>
-      </div>
-    </section>
+          <a
+            href="#meaty_section"
+            class="link-arrow-container link desktop-only"
+          >
+            <p class="link-arrow">&darr;</p>
+          </a>
 
-    <section class="meaty_section center" id="meaty_section">
-      <div class="grid-container">
-          
-          <h2 id="date">
-            13th June 2023
-          </h2>
+          <!-- hidden on mobile -->
+          <p
+            class="side-text vertical-grid-side desktop-only italicise"
+            id="opener-side-text"
+          >
+            One small step for man...
+          </p>
+        </div>
+      </section>
 
-          <p class="side-text vertical-grid-side desktop-only italicise" id="meaty-side-text">
-            Connecting news on earth and space...
+      <section class="meaty_section center" id="meaty_section">
+        <div class="grid-container">
+          <h2 id="date">13th June 2023</h2>
+
+          <p
+            class="side-text vertical-grid-side desktop-only italicise"
+            id="meaty-side-text"
+          >
+            <!--  -->
           </p>
 
           <div id="user-image-container" class="center square-image">
@@ -69,32 +91,43 @@
 
           <form class="center-text">
             <label for="formDate">Enter DATE</label>
-            <input type="date" name="formDate" id="formDate" min="2000-01-01" max="2023-12-31" required>
+            <input
+              type="date"
+              name="formDate"
+              id="formDate"
+              min="2000-01-01"
+              max="2023-12-31"
+              required
+            />
             <label for="section">Select INTEREST</label>
-            <input list="section" required>
+            <input list="section" required />
             <datalist id="section" name="section">
-              <option value="General">
-              <option value="Politics">
-              <option value="Business">
-              <option value="Sport">
-              <option value="Culture">
-              <option value="Technology">
-              <option value="Science">
-              <option value="Environment">
-              <option value="Travel">
-              <option value="Books">
-              <option value="Music">
-              <option value="Film">
-              <option value="Television">
-              <option value="Art and Design">
+              <option value="General"></option>
+              <option value="Politics"></option>
+              <option value="Business"></option>
+              <option value="Sport"></option>
+              <option value="Culture"></option>
+              <option value="Technology"></option>
+              <option value="Science"></option>
+              <option value="Environment"></option>
+              <option value="Travel"></option>
+              <option value="Books"></option>
+              <option value="Music"></option>
+              <option value="Film"></option>
+              <option value="Television"></option>
+              <option value="Art and Design"></option>
             </datalist>
+
             <button type="submit">COMPUTE RESULTS</button>
           </form>
 
-          <p id="explanation" class="desktop-only">Explanation: What’s that near the Moon? It’s the International Space Station (ISS).</p>
-      </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
+          <p id="explanation" class="desktop-only">
+            Explanation: What’s that near the Moon? It’s the International Space
+            Station (ISS).
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
