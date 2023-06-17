@@ -1,6 +1,15 @@
 # HTTP Project: Space News Project
-A fictitous ghostbusters agency web page for paranormal investigators Eun, Hugh, and George. The webpage contains a responsive navigation bar, a team members information section, and a contact form for getting in touch.  
 
+            “There is a theory which states that if ever anyone discovers
+            exactly what the Universe is for and why it is here, it will
+            instantly disappear and be replaced by something even more bizarre
+            and inexplicable. There is another theory which states that this has
+            already happened.” ― Douglas Adams 
+            
+            A project built for juxtaposing
+            space and earth stories. Enter a date and a news category to
+            generate the image.
+  
 <br> View web page here: [insert url].
 
 ## Repository Contents:
