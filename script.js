@@ -6,10 +6,13 @@ document.getElementById(
 const NASAapiKey = "3wnxOfRJD4eT7ejeRvcgQUIIKAANUyqtIBVq62Iz";
 const unsplashAPIkey = "UhChBZg41aaNCvsaG2V9bstJAN_MB7U8UuVkqoOtDJQ";
 const form = document.querySelector("form");
+const dateTitle = document.getElementById("date");
 
 const apodDisplayElement = document.getElementById("user-image-container");
 const apodDescriptionElement = document.getElementById("explanation");
 const apiHeadlineElement = document.getElementById("apiHeadline");
+
+
 
 // Form listener event. Grabs APOD from NASA API then calls grabHeadline function at the end.
 form.addEventListener("submit", (event) => {
@@ -37,9 +40,14 @@ form.addEventListener("submit", (event) => {
         throw new Error("HD URL is undefined.");
       }
       apodDisplayElement.style.background = `url(${hdUrl}) center / cover no-repeat`;
+
+      apodDescriptionElement.textContent = description;
+      dateTitle.insertAdjacentHTML("beforeend", dateInput);
+
     //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
     //     the shortened description is then rendered on the DOM within the function.
       shortExplanation(description);
+
 
       grabHeadline();
     })
