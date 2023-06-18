@@ -39,10 +39,15 @@ form.addEventListener("submit", (event) => {
       if (hdUrl === undefined) {
         throw new Error("HD URL is undefined.");
       }
-
       apodDisplayElement.style.background = `url(${hdUrl}) center / cover no-repeat`;
+
       apodDescriptionElement.textContent = description;
       dateTitle.insertAdjacentHTML("beforeend", dateInput);
+
+    //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
+    //     the shortened description is then rendered on the DOM within the function.
+      shortExplanation(description);
+
 
       grabHeadline();
     })
