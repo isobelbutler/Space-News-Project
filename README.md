@@ -20,6 +20,7 @@ This repository holds a project built for juxtaposing space and earth stories an
 1. index.html - [insert description].
 2. styles.css - [insert description].
 3. index.js - [insert description].
+4. images - 
 
 ---
 ## Acceptance criteria:
@@ -33,3 +34,7 @@ This repository holds a project built for juxtaposing space and earth stories an
 Authors: <br>
 George Klemperer <br>
 Isobel Butler
+
+<img width="100%" alt="image" src="https://github.com/isobelbutler/Space-News-Project/assets/124908931/732240ba-9e64-41ed-a074-3a150df53c51">
+
+<img width="100%" alt="image" src="images/websiteScreenshot">
