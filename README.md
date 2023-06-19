@@ -12,12 +12,12 @@
 
 ## Table of Contents:
 
-1. [Introduction](#Introduction)
-2. Repository Contents
-3. Project Objectives
-4. [Planning](#Planning)
-5. [Compatibility](#Compatibility)
-6. [Authors](#Authors)
+1. [Introduction](#introduction)
+2. [Repository Contents](#repository-contents)
+3. [Project Objectives](#project-objectives)
+4. [Planning](#planning)
+5. [Compatibility](#compatibility)
+6. [Authors](#authors)
 
 ## Introduction:
          
@@ -47,7 +47,9 @@ View web page here: [insert url].
 
 ## Planning:
 
-<img width="60%" alt="image" src="images/figmaScreenshot.png">
+Figma was used to desing an initial layout.
+
+<img width="100%" alt="image" src="images/figmaScreenshot.png">
 
 ## Compatibility
 The website is designed to be compatible with modern web browsers. It utilizes CSS media queries to provide a responsive layout across different computer and mobile phone screen sizes.
