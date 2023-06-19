@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
       apodDisplayElement.style.background = `url(${hdUrl}) center / cover no-repeat`;
 
       apodDescriptionElement.textContent = description;
-      dateTitle.insertAdjacentHTML("beforeend", dateInput);
+      dateTitle.innerHTML = dateInput;
 
     //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
     //     the shortened description is then rendered on the DOM within the function.
