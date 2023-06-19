@@ -51,6 +51,12 @@ Figma was used to desing an initial layout.
 
 <img width="100%" alt="image" src="images/figmaScreenshot.png">
 
+Then we broke up the project into its main components and divided the workload evenly, focusing on the following tasks:
+
+- Implementing responsive website CSS.
+- Designing the NASA APOD API fetch function with error handling.
+- Designing The Guardian API fetch function with error handling.
+
 ## Compatibility
 The website is designed to be compatible with modern web browsers. It utilizes CSS media queries to provide a responsive layout across different computer and mobile phone screen sizes.
 
