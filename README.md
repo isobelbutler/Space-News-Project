@@ -10,31 +10,50 @@
 
 — Douglas Adams
 
-<br>          
-This repository holds a project built for juxtaposing space and earth stories and for practicing interacting with public APIs. Enter a date and a news category to generate the image. The APIs utlized in the website are NASA's apod API, The Guardian API, and Unsplash.
+## Table of Contents:
 
-<br>View web page here: [insert url].
+1. [Introduction](#Introduction)
+2. Repository Contents
+3. Project Objectives
+4. [Planning](#Planning)
+5. [Compatibility](#Compatibility)
+6. [Authors](#Authors)
+
+## Introduction:
+         
+This repository holds a project built for juxtaposing space and earth stories and for practicing interacting with public APIs. Enter a date and a news category to generate the image. The APIs utlized in the website are NASA's apod API, The Guardian API, and Unsplash.<br>
+
+<img width="100%" alt="image" src="images/websiteScreenshot.png">
+
+View web page here: [insert url].
+
 
 ## Repository Contents:
 
-1. index.html - [insert description].
-2. styles.css - [insert description].
-3. index.js - [insert description].
-4. images - 
+1. index.html - website HTML.
+2. styles.css - the styles for the website.
+3. index.js - website javascipt.
+4. explanation-bug.js - javascript file coonatining a function to shorten the APOD's accompanying description.
+5. images - folder containing all the images for the website.
 
----
-## Acceptance criteria:
+
+## Project Objectives:
 
 - [x] Query at least two APIs using fetch.
 - [x] Dynamic content generated with JS.
 - [x] Accessible and responsive mobile-first designed site.
+- [x] Incorporate some indication that data is loading.
+- [x] Incorporate error handling and display error when something goes wrong.
 
----
+## Planning:
 
-Authors: <br>
-George Klemperer <br>
-Isobel Butler
+<img width="60%" alt="image" src="images/figmaScreenshot.png">
 
-<img width="100%" alt="image" src="https://github.com/isobelbutler/Space-News-Project/assets/124908931/732240ba-9e64-41ed-a074-3a150df53c51">
+## Compatibility
+The website is designed to be compatible with modern web browsers. It utilizes CSS media queries to provide a responsive layout across different computer and mobile phone screen sizes.
 
-<img width="100%" alt="image" src="images/websiteScreenshot">
+## Authors
+[George Klemperer](https://www.github.com/GeorgeKlemperer)
+<br>
+[Isobel Butler](https://www.github.com/isobelbutler)
+
