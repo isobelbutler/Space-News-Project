@@ -20,6 +20,12 @@ form.addEventListener("submit", (event) => {
   document.querySelector(".headline-text").style.display = "none";
 
   const dateInput = document.getElementById("formDate").value;
+  let fullDate = new Date(dateInput);
+  let day = fullDate.getDate();
+  let month = fullDate.getMonth() + 1; // you need + 1 as month is seen as 0-11.
+  let year = fullDate.getFullYear();
+  let headingDate = `${day} / ${month} / ${year}`; // string interpolation
+
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASAapiKey}&date=${dateInput}`;
 
   // Show loading wheel
@@ -40,9 +46,8 @@ form.addEventListener("submit", (event) => {
         throw new Error("HD URL is undefined.");
       }
       apodDisplayElement.style.background = `url(${hdUrl}) center / cover no-repeat`;
-
       apodDescriptionElement.textContent = description;
-      dateTitle.insertAdjacentHTML("beforeend", dateInput);
+      dateTitle.innerHTML = headingDate;
 
     //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
     //     the shortened description is then rendered on the DOM within the function.
