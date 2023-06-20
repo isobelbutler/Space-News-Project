@@ -50,9 +50,10 @@ form.addEventListener("submit", (event) => {
       apodDescriptionElement.textContent = description;
       dateTitle.innerHTML = headingDate;
 
-    //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
-    //     the shortened description is then rendered on the DOM within the function.
+      //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
+      //     the shortened description is then rendered on the DOM within the function.
       shortExplanation(description);
+
       grabHeadline();
     })
     .catch((error) => {
@@ -124,3 +125,16 @@ const grabHeadline = () => {
 
   fetchArticlesByDateAndSection(specificDate, articleFilter);
 };
+
+// Clear Button Javascript
+// Get the button element using its ID
+const clearButton = document.getElementById("clearButton");
+
+// Define the function to be executed when the button is clicked
+function clearButtonClicked() {
+  const articleSectionInput = document.getElementById("articleSection");
+  articleSectionInput.value = "";
+}
+
+// Attach the function to the button's click event
+clearButton.addEventListener("click", clearButtonClicked);
