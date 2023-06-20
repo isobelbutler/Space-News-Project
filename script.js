@@ -53,8 +53,6 @@ form.addEventListener("submit", (event) => {
     //   shortExplanation takes the description provided by the API, and reduces it to the first two sentences.
     //     the shortened description is then rendered on the DOM within the function.
       shortExplanation(description);
-
-
       grabHeadline();
     })
     .catch((error) => {
@@ -66,6 +64,8 @@ form.addEventListener("submit", (event) => {
       )
         .then((response) => response.json())
         .then((data) => {
+          dateTitle.innerHTML = headingDate;
+
           const randomImageUrl = data.urls.regular;
 
           // Display the random space-related image
