@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Space News</title>
+    <title>The ORBIT-uaries</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,16 +41,18 @@
           </a>
 
           <!-- hidden on mobile -->
-          <p class="subtitle desktop-only italicise" style="background-color: rgba(0, 0, 0, 0.70)">
+          <p
+            class="subtitle desktop-only italicise"
+            style="background-color: rgba(0, 0, 0, 0.7)"
+          >
             “There is a theory which states that if ever anyone discovers
             exactly what the Universe is for and why it is here, it will
             instantly disappear and be replaced by something even more bizarre
             and inexplicable. There is another theory which states that this has
-            already happened.” ― Douglas Adams 
-            <br><br>
-            A project built for juxtaposing
-            space and earth stories. Enter a date and a news category to
-            generate the image.
+            already happened.” ― Douglas Adams
+            <br /><br />
+            A project built for juxtaposing space and earth stories. Enter a
+            date and a news category to generate the image.
           </p>
 
           <a
@@ -99,26 +101,31 @@
               max="2023-12-31"
               required
             />
-            <label for="section">Select INTEREST</label>
-            <input list="section" required id="articleSection"/>
-            <datalist id="section" name="section">
-              <option value="General"></option>
-              <option value="Politics"></option>
-              <option value="Business"></option>
-              <option value="Sport"></option>
-              <option value="Culture"></option>
-              <option value="Technology"></option>
-              <option value="Science"></option>
-              <option value="Environment"></option>
-              <option value="Travel"></option>
-              <option value="Books"></option>
-              <option value="Music"></option>
-              <option value="Film"></option>
-              <option value="Television"></option>
-              <option value="Art and Design"></option>
-            </datalist>
 
-            <button type="submit">COMPUTE RESULTS</button>
+            <label for="section">Select INTEREST</label>
+            <span class="row justify-space-between" id="articleSpan">
+              <input list="section" required id="articleSection" />
+              <datalist id="section" name="section">
+                <option value="General"></option>
+                <option value="Politics"></option>
+                <option value="Business"></option>
+                <option value="Sport"></option>
+                <option value="Culture"></option>
+                <option value="Technology"></option>
+                <option value="Science"></option>
+                <option value="Environment"></option>
+                <option value="Travel"></option>
+                <option value="Books"></option>
+                <option value="Music"></option>
+                <option value="Film"></option>
+                <option value="Television"></option>
+                <option value="Art and Design"></option>
+              </datalist>
+
+              <button type="button" id="clearButton">X</button>
+            </span>
+
+            <button type="submit" id="submitButton">COMPUTE RESULTS</button>
           </form>
 
           <p id="explanation" class="desktop-only">
@@ -129,6 +136,5 @@
     </main>
     <script src="script.js"></script>
     <script src="explanation-bug.js"></script>
-
   </body>
 </html>
