@@ -65,9 +65,7 @@ form.addEventListener("submit", (event) => {
         .then((response) => response.json())
         .then((data) => {
           dateTitle.innerHTML = headingDate;
-
           const randomImageUrl = data.urls.regular;
-
           // Display the random space-related image
           apodDisplayElement.style.background = `url(${randomImageUrl}) center / cover no-repeat`;
 
