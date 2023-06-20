@@ -12,7 +12,8 @@ const apodDisplayElement = document.getElementById("user-image-container");
 const apodDescriptionElement = document.getElementById("explanation");
 const apiHeadlineElement = document.getElementById("apiHeadline");
 
-
+//  Prevents future dates from being displayed in input field.
+formDate.max = new Date().toISOString().split("T")[0]; 
 
 // Form listener event. Grabs APOD from NASA API then calls grabHeadline function at the end.
 form.addEventListener("submit", (event) => {
