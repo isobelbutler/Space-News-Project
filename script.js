@@ -12,6 +12,9 @@ const apodDisplayElement = document.getElementById("user-image-container");
 const apodDescriptionElement = document.getElementById("explanation");
 const apiHeadlineElement = document.getElementById("apiHeadline");
 
+//  Prevents future dates from being displayed in input field.
+formDate.max = new Date().toISOString().split("T")[0]; 
+
 // Form listener event. Grabs APOD from NASA API then calls grabHeadline function at the end.
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -62,8 +65,8 @@ form.addEventListener("submit", (event) => {
       )
         .then((response) => response.json())
         .then((data) => {
+          dateTitle.innerHTML = headingDate;
           const randomImageUrl = data.urls.regular;
-
           // Display the random space-related image
           apodDisplayElement.style.background = `url(${randomImageUrl}) center / cover no-repeat`;
 
