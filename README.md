@@ -25,7 +25,8 @@ This repository holds a project built for juxtaposing space and earth stories an
 
 <img width="100%" alt="image" src="images/websiteScreenshot.png">
 
-View web page here: [insert url].
+View web page here: <a href="https://isobelbutler.github.io/Space-News-Project/" target="blank">isobelbutler.github.io/Space-News-Project/.</a>
+
 
 
 ## Repository Contents:
