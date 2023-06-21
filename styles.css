@@ -22,11 +22,6 @@
 * {
   color: var(--white);
   font-family: "Inter", sans-serif;
-}
-
-*,
-*::before,
-*::after {
   box-sizing: border-box;
   margin: 0;
   scroll-behavior: smooth;
@@ -57,6 +52,10 @@ section {
   display: none;
 }
 
+.margin-center {
+  margin: 0 auto;
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -73,6 +72,7 @@ section {
 
 .side-text {
   writing-mode: vertical-lr;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .uppercase-text {
@@ -85,8 +85,7 @@ section {
 
 .outline-text {
   color: var(--background-main);
-  text-shadow: var(--outline-text-negative) var(--outline-text-postive) 0
-      var(--white),
+  text-shadow: var(--outline-text-negative) var(--outline-text-postive) 0 var(--white),
     var(--outline-text-postive) var(--outline-text-postive) 0 var(--white),
     var(--outline-text-postive) var(--outline-text-negative) 0 var(--white),
     var(--outline-text-negative) var(--outline-text-negative) 0 var(--white);
@@ -108,8 +107,8 @@ section {
 .justify-space-between {
   justify-content: space-between;
 }
-/* Fonts */
 
+/* Fonts */
 h1 {
   font-size: 6rem;
   text-align: center;
@@ -119,10 +118,14 @@ a {
   text-decoration: none;
 }
 
-/* Grid */
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
 
+/* Grid */
 .grid-container {
-  padding: var(--med-padding) 0;
+  padding: var(--xl-padding) 0;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -139,7 +142,6 @@ a {
 }
 
 /* Link Symbols */
-
 .link-button {
   padding: var(--xs-padding);
   background-color: var(--white);
@@ -151,9 +153,6 @@ a {
   color: var(--black);
 }
 
-.link-arrow-container {
-  margin: 0 auto;
-}
 .link-arrow {
   font-size: 4rem;
 }
@@ -168,8 +167,8 @@ a {
   color: var(--button-hover);
   transition: 0.5s;
 }
-/* Opening Section */
 
+/* Opening Section */
 .coverpage .grid-container,
 .meaty_section .grid-container {
   grid-template-columns: 1fr;
@@ -184,13 +183,32 @@ a {
 }
 
 .subtitle {
-  width: 80%;
+  width: 60%;
+  font-style: normal;
   padding: 1rem;
   border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.subtitle h3 {
+  padding-bottom: var(--xs-padding);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  text-align: center;
+}
+
+blockquote,
+cite {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+}
+
+.quote {
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 /* Meaty Form Section */
-
 #user-image-container {
   border: 2px white solid;
 }
@@ -204,7 +222,7 @@ a {
   padding: 1rem;
   font-size: 1rem;
   width: 80%;
-  display: none; /* This will need to be changed with JS when API headline is generated */
+  display: none;
 }
 
 form {
@@ -274,11 +292,11 @@ form #submitButton {
 }
 
 #explanation {
-  text-align: justify;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Media Queries */
-
 @media (min-width: 450px) {
   section {
     padding: 0 var(--xl-padding);
@@ -320,7 +338,6 @@ form #submitButton {
       ". date meaty-side-text"
       "form user-image-container meaty-side-text"
       "explanation user-image-container meaty-side-text";
-    /* "explanation user-image-container meaty-side-text";  */
   }
 
   .meaty_section .grid-container > * {
